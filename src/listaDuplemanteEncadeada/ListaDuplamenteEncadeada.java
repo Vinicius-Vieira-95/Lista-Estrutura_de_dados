@@ -1,6 +1,5 @@
 package listaDuplemanteEncadeada;
 
-import lista.NoEncadeado;
 
 public class ListaDuplamenteEncadeada {
 
@@ -103,33 +102,41 @@ public class ListaDuplamenteEncadeada {
 				else if(aux.getAnt() == null && aux.getProx() != null) {
 					inicio = null;
 					inicio = aux.getProx();
+					quantidade--;
 					return true;
 				}
 				//caso o elemento seja o ultimo da lista
 				else if(aux.getAnt() != null &&  aux.getProx() == null) {
 					fim = null;
-					fim = aux.getAnt();
+					fim = aux.getAnt(); //pegando o endereço de memeria anteria
+					aux.getAnt().setProx(null); // apangando o endereço de memoria do proximo
+					quantidade--;
 					return true;
 				}
 				//caso o elemento esteja no meio da lista
 				else if(aux.getAnt() != null && aux.getProx() != null) {
+					aux.getAnt().setProx(aux.getProx());
+					aux.getProx().setAnt(aux.getAnt());
+					quantidade--;
 					return true;
 					
 				}
 				
 			}
-			aux = inicio.getProx();
+			aux = aux.getProx();
 		}
 		return false;
 	}
 
-	// passe um referencia de localização
+	// passe um referencia de localização metodo não finalizado
 	public boolean inserirNoMeio(int elemento) {
 		if (this.inicio == null) {
 			criarLista(elemento);
 			return true;
 		} else {
-
+			NoDuplamenteEncadeado novoNo = new NoDuplamenteEncadeado();
+			novoNo.setElemento(elemento);
+			
 		}
 		return false;
 	}

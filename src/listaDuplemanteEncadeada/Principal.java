@@ -14,8 +14,10 @@ public class Principal {
 		
 		lde.criarLista(29);
 		lde.inserirNoInicio(01);
+		lde.listarElementos();
+		lde.removerElemento(15);
 		
-		lde.removerElemento(1);
+		System.out.println();
 		
 		lde.listarElementos();
 		
