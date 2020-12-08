@@ -144,7 +144,7 @@ public class ListaEstatica<T> {
 	public void eliminarItemRepitido(T[] vetor) {
 		
 		for(int i = 0 ; i < this.getQtd(); i++) {
-			for(int j = i+1; j < this.getQtd(); j++) {
+			for(int j = i + 1; j < this.getQtd(); j++) {
 				if(vetor[i].equals(vetor[j])) {
 					//metodo na mesma classe chamada para remover o elemento
 					removerPorPosicao(j);

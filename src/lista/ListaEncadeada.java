@@ -1,6 +1,6 @@
 package lista;
 
-public class ListaEncadeada{
+public class ListaEncadeada<T>{
 
 	private NoEncadeado inicio;
 	private NoEncadeado fim;
@@ -36,7 +36,7 @@ public class ListaEncadeada{
 		return this.quantidade;
 	}
 	
-  
+	//cria a primeiro lista
 	public void inserir(Object object) {
 		if(this.inicio == null) {
 			inicio = new NoEncadeado();
@@ -54,7 +54,7 @@ public class ListaEncadeada{
 		quantidade++;
 	}
 	
-	public boolean inserirNoInicio(Integer elemento) {
+	public boolean inserirNoInicio(Object elemento) {
 		if(this.inicio == null) {
 			inserir(elemento);
 			return true;
@@ -76,7 +76,7 @@ public class ListaEncadeada{
 	}
 	
 	//passe um referencia de localização
-	public boolean inserirNoMeio(Integer elemento) {
+	public boolean inserirNoMeio(Object elemento) {
 		if(this.inicio == null) {
 			inserir(elemento);
 			return true;
@@ -86,6 +86,17 @@ public class ListaEncadeada{
 			
 		}
 		return false;
+	}
+	
+	public Object buscar(Object elemento) {
+		
+		NoEncadeado novo = new NoEncadeado();
+		
+		return null;
+	}
+	
+	public void removerElementosRepetidos(ListaEncadeada lista) {
+		
 	}
 
 	public boolean listarElementos() {
