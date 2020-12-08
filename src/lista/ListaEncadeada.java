@@ -37,24 +37,24 @@ public class ListaEncadeada{
 	}
 	
   
-	public void inserir(int elemento) {
+	public void inserir(Object object) {
 		if(this.inicio == null) {
 			inicio = new NoEncadeado();
 			fim = inicio;	
 			NoEncadeado novoNo = new NoEncadeado();
-			novoNo.setElemento(elemento);
+			novoNo.setElemento(object);
 			novoNo.setProx(null);
 			fim.setProx(novoNo);
 			inicio = fim = novoNo;
 			
 		}
 		else {
-			inserirNoFim(elemento);
+			inserirNoFim(object);
 		}
 		quantidade++;
 	}
 	
-	public boolean inserirNoInicio(int elemento) {
+	public boolean inserirNoInicio(Integer elemento) {
 		if(this.inicio == null) {
 			inserir(elemento);
 			return true;
@@ -67,7 +67,7 @@ public class ListaEncadeada{
 		return true;
 	}
 	
-	public void inserirNoFim(int elemento) {
+	public void inserirNoFim(Object elemento) {
 		NoEncadeado novoNo = new NoEncadeado();
 		novoNo.setElemento(elemento);
 		novoNo.setProx(null);
@@ -76,7 +76,7 @@ public class ListaEncadeada{
 	}
 	
 	//passe um referencia de localização
-	public boolean inserirNoMeio(int elemento) {
+	public boolean inserirNoMeio(Integer elemento) {
 		if(this.inicio == null) {
 			inserir(elemento);
 			return true;

@@ -7,18 +7,33 @@ public class ListaEstatica<T> {
 
 	// tipo de vetor
 	private T[] elementos;
-	int qtd;
+	private int qtd;
 
 	public ListaEstatica(int tamanho, Class<T> tipoClasse) {
-			this.elementos = (T[]) Array.newInstance(tipoClasse, tamanho);
-			this.qtd = 0;
-	}
-	
-	public ListaEstatica(int tamanho) {
-		this.elementos =  (T[]) new Object[tamanho]; //solução simples
+		this.elementos = (T[]) Array.newInstance(tipoClasse, tamanho);
 		this.qtd = 0;
-}
-	
+	}
+
+	public ListaEstatica(int tamanho) {
+		this.elementos = (T[]) new Object[tamanho]; // solução simples
+		this.qtd = 0;
+	}
+
+	public T[] getElementos() {
+		return elementos;
+	}
+
+	public void setElementos(T[] elementos) {
+		this.elementos = elementos;
+	}
+
+	public int getQtd() {
+		return qtd;
+	}
+
+	public void setQtd(int qtd) {
+		this.qtd = qtd;
+	}
 
 	// adcionando elemento no vetor
 	public boolean addcionar(T elemento) {
@@ -51,7 +66,7 @@ public class ListaEstatica<T> {
 			throw new IllegalArgumentException("Posição não existe");
 		}
 		for (int i = posicao; i < qtd; i++) {
-			this.elementos[i - 1] = this.elementos[i];
+			this.elementos[i] = this.elementos[i+1];
 		}
 		this.qtd--;
 		return true;
@@ -71,27 +86,27 @@ public class ListaEstatica<T> {
 	public int tamanho() {
 		return this.qtd;
 	}
-	
+
 	public int busca(T tipo) {
-		for(int i= 0; i < this.qtd ; i++) {
-			if(this.elementos[i].equals(tipo)){
+		for (int i = 0; i < this.qtd; i++) {
+			if (this.elementos[i].equals(tipo)) {
 				return i;
 			}
 		}
 		return -1;
 	}
-	
-	public T busca(int posicao) {
-		if(!(posicao  >=0 && posicao < this.qtd)) {
+
+	public T buscaPorPosicao(int posicao) {
+		if (!(posicao >= 0 && posicao < this.qtd)) {
 			throw new IllegalArgumentException("Posição inalda");
 		}
 		return this.elementos[posicao];
 	}
-	
+
 	public T obtem(int posicao) {
-		return this.busca(posicao);
+		return this.buscaPorPosicao(posicao);
 	}
-	
+
 	public boolean contem(T tipo) {
 		return busca(tipo) > -1;
 	}
@@ -125,12 +140,26 @@ public class ListaEstatica<T> {
 			this.elementos = novoElemento;
 		}
 	}
-	
+
+	public void eliminarItemRepitido(T[] vetor) {
+		
+		for(int i = 0 ; i < this.getQtd(); i++) {
+			for(int j = i+1; j < this.getQtd(); j++) {
+				if(vetor[i].equals(vetor[j])) {
+					//metodo na mesma classe chamada para remover o elemento
+					removerPorPosicao(j);
+				}
+			}
+		}
+		//setando novo vetor sem elementos repetidos
+		setElementos(vetor);
+	}
+
 	public void limpa() {
-		
-		//this.elementos = (T[]) new Object[this.elementos.length];	
-		
-		for(int i = 0; i < this.qtd ; i++) {
+
+		// this.elementos = (T[]) new Object[this.elementos.length];
+
+		for (int i = 0; i < this.qtd; i++) {
 			this.elementos[i] = null;
 		}
 		this.qtd = 0;

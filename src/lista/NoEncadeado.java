@@ -3,7 +3,7 @@ package lista;
 public class NoEncadeado {
 
 	private NoEncadeado prox; // apontara para endereço de memoria
-	private int elemento; //tipo de Objeto
+	private Object elemento; //tipo de Objeto
 	
 	public NoEncadeado(){
 	}
@@ -14,10 +14,10 @@ public class NoEncadeado {
 	public void setProx(NoEncadeado prox) {
 		this.prox = prox;
 	}
-	public int getElemento() {
+	public Object getElemento() {
 		return elemento;
 	}
-	public void setElemento(int elemento) {
+	public void setElemento(Object elemento) {
 		this.elemento = elemento;
 	}
 	
