@@ -1,4 +1,4 @@
-package numeroComplexo;
+package questao01;
 
 public class Complexo {
 

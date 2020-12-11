@@ -1,6 +1,6 @@
-package esferaCalculo;
+package questao01;
 
-public class Principal {
+public class Item02 {
 
 	public static void main(String[] args) {
 		

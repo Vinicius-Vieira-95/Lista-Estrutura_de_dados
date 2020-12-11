@@ -1,6 +1,6 @@
-package numeroComplexo;
+package questao01;
 
-public class Principal {
+public class Item01 {
 
 	public static void main(String[] args) {
 

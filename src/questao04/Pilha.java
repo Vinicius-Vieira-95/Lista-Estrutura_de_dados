@@ -1,4 +1,4 @@
-package pilha;
+package questao04;
 
 
 public class Pilha<T> extends estruturaDeBaseEstatica.EstruturaEstatica<T> {
