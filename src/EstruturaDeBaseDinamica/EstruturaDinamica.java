@@ -1,15 +1,13 @@
-package questao02.lista;
+package EstruturaDeBaseDinamica;
 
-import EstruturaDeBaseDinamica.NoEncadeado;
-
-public class ListaEncadeada<T>{
+public abstract class EstruturaDinamica<T>{
 
 	private NoEncadeado inicio;
 	private NoEncadeado fim;
 
 	private int quantidade;
 
-	public ListaEncadeada() {
+	public EstruturaDinamica() {
 		this.inicio = null;
 		this.fim = inicio;
 		this.quantidade = 0;
@@ -33,12 +31,11 @@ public class ListaEncadeada<T>{
 	}
 
 	//retorna o tamanho do No
-	
 	public int getQuantidade(){
 		return this.quantidade;
 	}
 	
-	//cria a primeiro lista
+	//cria o primeiro elemento 
 	public void inserir(Object object) {
 		if(this.inicio == null) {
 			inicio = new NoEncadeado();
@@ -77,7 +74,11 @@ public class ListaEncadeada<T>{
 		fim = novoNo;
 	}
 	
+	
+	public abstract void remover();
+	
 	//passe um referencia de localização
+	/*
 	public boolean inserirNoMeio(Object elemento) {
 		if(this.inicio == null) {
 			inserir(elemento);
@@ -90,16 +91,7 @@ public class ListaEncadeada<T>{
 		return false;
 	}
 	
-	public Object buscar(Object elemento) {
-		
-		NoEncadeado novo = new NoEncadeado();
-		
-		return null;
-	}
-	
-	public void removerElementosRepetidos(ListaEncadeada lista) {
-		
-	}
+	*/
 
 	public boolean listarElementos() {
 		if(this.inicio == null) {

@@ -1,4 +1,4 @@
-package questao02.lista;
+package EstruturaDeBaseDinamica;
 
 public class NoEncadeado {
 
