@@ -1,14 +1,13 @@
-package questao02.listaDuplemanteEncadeada;
+package EstruturaDuplamenteEncadeado;
 
-
-public class ListaDuplamenteEncadeada {
+public class EstruturaDuplamenteEncadeada<T> {
 
 	private NoDuplamenteEncadeado inicio;
 	private NoDuplamenteEncadeado fim;
 
-	private int quantidade;
+	protected int quantidade;
 
-	public ListaDuplamenteEncadeada() {
+	public EstruturaDuplamenteEncadeada() {
 		this.inicio = null;
 		this.fim = inicio;
 		this.quantidade = 0;
@@ -38,7 +37,7 @@ public class ListaDuplamenteEncadeada {
 	}
 
 	// metodo para criar uma lista
-	public void criarLista(int elemento) {
+	public void criarLista(Object elemento) {
 		if (this.inicio == null) {
 			inicio = new NoDuplamenteEncadeado();
 			fim = inicio;
@@ -56,7 +55,7 @@ public class ListaDuplamenteEncadeada {
 		}
 	}
 
-	public boolean inserirNoInicio(int elemento) {
+	public boolean inserirNoInicio(Object elemento) {
 		if (this.inicio == null) {
 			criarLista(elemento);
 			return true;
@@ -71,7 +70,7 @@ public class ListaDuplamenteEncadeada {
 	}
 
 	// metodo para inserir um elemento no final da lista
-	public boolean inserirNoFim(int elemento) {
+	public boolean inserirNoFim(Object elemento) {
 		if (quantidade != 0) {
 			NoDuplamenteEncadeado novoNo = new NoDuplamenteEncadeado();
 			novoNo.setElemento(elemento);
@@ -87,7 +86,7 @@ public class ListaDuplamenteEncadeada {
 		return false;
 	}
 
-	public boolean removerElemento(int elemento) {
+	public boolean removerElemento(Object elemento) {
 		
 		NoDuplamenteEncadeado aux = new NoDuplamenteEncadeado();
 		aux = inicio;
@@ -129,7 +128,7 @@ public class ListaDuplamenteEncadeada {
 	}
 
 	// passe um referencia de localização metodo não finalizado
-	public boolean inserirNoMeio(int elemento) {
+	public boolean inserirNoMeio(Object elemento) {
 		if (this.inicio == null) {
 			criarLista(elemento);
 			return true;

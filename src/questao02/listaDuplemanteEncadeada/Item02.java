@@ -1,11 +1,13 @@
 package questao02.listaDuplemanteEncadeada;
 
+import EstruturaDuplamenteEncadeado.EstruturaDuplamenteEncadeada;
+
 public class Item02 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ListaDuplamenteEncadeada lde = new ListaDuplamenteEncadeada();
+		EstruturaDuplamenteEncadeada lde = new EstruturaDuplamenteEncadeada();
 		
 		lde.criarLista(10);
 		lde.inserirNoInicio(2);

@@ -1,10 +1,10 @@
-package questao02.listaDuplemanteEncadeada;
+package EstruturaDuplamenteEncadeado;
 
 public class NoDuplamenteEncadeado {
 
 	private NoDuplamenteEncadeado prox; // apontara para o proximo endereço de memoria
 	private NoDuplamenteEncadeado ant; //apontará para o enederço anterio no endereço de meroria
-	private int elemento; //tipo de Objeto
+	private Object elemento; //tipo de Objeto
 	
 	public NoDuplamenteEncadeado(){
 	}
@@ -24,10 +24,10 @@ public class NoDuplamenteEncadeado {
 		this.ant = ant;
 	}
 
-	public int getElemento() {
+	public Object getElemento() {
 		return elemento;
 	}
-	public void setElemento(int elemento) {
+	public void setElemento(Object elemento) {
 		this.elemento = elemento;
 	}
 	
